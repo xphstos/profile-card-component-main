@@ -1,0 +1,116 @@
+:root {
+	--dark-cyan: hsl(185, 75%, 39%);
+	--dark-desaturated-blue: hsl(229, 23%, 23%);
+	--dark-grayish-blue: hsl(227, 10%, 46%);
+	--dark-gray: hsl(0, 0%, 59%);
+	--light-gray: hsl(0, 0%, 79%);
+}
+
+html {
+	font-size: 18px;
+	height: 100%;
+}
+
+body {
+	font-family: "Kumbh Sans", sans-serif;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	place-items: center;
+	place-content: center;
+	background-color: var(--dark-cyan);
+	background-image: url("./images/bg-pattern-top.svg"),
+		url("./images/bg-pattern-bottom.svg");
+	background-repeat: no-repeat;
+	background-size: 100%, 100%;
+	background-position: -50vw -61vw, 40vw 26vw;
+}
+
+@media screen and (max-width: 375px) {
+	body {
+		background-position: -50vw -41vw, 48vw 88vw;
+		background-size: 100%, 200%;
+	}
+}
+
+.card {
+	border-radius: 14px;
+	width: calc(100vw - 50px);
+	max-width: 350px;
+	background-color: #fff;
+	overflow: hidden;
+	color: var(--dark-desaturated-blue);
+	font-weight: 700;
+	contain: content;
+	z-index: 1;
+}
+
+.card__image-container {
+	height: 140px;
+	position: relative;
+	background-image: url("./images/bg-pattern-card.svg");
+}
+
+.card__image {
+	position: absolute;
+	top: 140px;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	width: 96px;
+	height: 96px;
+	border-radius: 48px;
+	box-shadow: 0 0 0 6px #fff;
+}
+
+.card__header {
+	text-align: center;
+	padding: 72px 1rem 26px;
+	box-shadow: 0 1px 0 var(--light-gray);
+}
+
+.user__name {
+	margin-top: 0;
+}
+
+.user__name span,
+.user__location,
+.social__label {
+	font-weight: 400;
+	color: var(--dark-grayish-blue);
+}
+
+.card__footer {
+	display: flex;
+	justify-content: space-around;
+	padding: 28px 1rem;
+}
+
+.social {
+	text-align: center;
+}
+
+.social__label {
+	font-size: 14px;
+	letter-spacing: 1px;
+}
+
+.social__value {
+	font-size: 1.2em;
+	margin-bottom: 1rem;
+}
+
+.attribution {
+	font-size: 0.6rem;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	width: calc(100vw - 50px);
+	transform: translateX(-50%);
+	padding: 1rem 0;
+}
+
+.attribution a {
+	color: inherit;
+}
