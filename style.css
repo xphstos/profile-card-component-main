@@ -4,6 +4,7 @@
 	--dark-grayish-blue: hsl(227, 10%, 46%);
 	--dark-gray: hsl(0, 0%, 59%);
 	--light-gray: hsl(0, 0%, 79%);
+	--white: hsl(0, 0%, 100%);
 }
 
 html {
@@ -13,18 +14,19 @@ html {
 
 body {
 	font-family: "Kumbh Sans", sans-serif;
-	height: 100%;
+	min-height: 100vh;
 	margin: 0;
-	padding: 0;
-	display: grid;
-	place-items: center;
-	place-content: center;
+	padding: 2rem 0;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	background-color: var(--dark-cyan);
 	background-image: url("./images/bg-pattern-top.svg"),
 		url("./images/bg-pattern-bottom.svg");
 	background-repeat: no-repeat;
 	background-size: 100%, 100%;
-	background-position: -50vw -61vw, 40vw 26vw;
+	background-position: -50vw 115%, 43vw -50%;
 }
 
 @media screen and (max-width: 375px) {
@@ -38,12 +40,13 @@ body {
 	border-radius: 14px;
 	width: calc(100vw - 50px);
 	max-width: 350px;
-	background-color: #fff;
+	background-color: var(--white);
 	overflow: hidden;
 	color: var(--dark-desaturated-blue);
 	font-weight: 700;
 	contain: content;
 	z-index: 1;
+	box-shadow: 0 20px 40px -20px var(--dark-desaturated-blue);
 }
 
 .card__image-container {
@@ -60,12 +63,12 @@ body {
 	width: 96px;
 	height: 96px;
 	border-radius: 48px;
-	box-shadow: 0 0 0 6px #fff;
+	box-shadow: 0 0 0 5px #fff;
 }
 
 .card__header {
 	text-align: center;
-	padding: 72px 1rem 26px;
+	padding: 72px 1rem 28px;
 	box-shadow: 0 1px 0 var(--light-gray);
 }
 
@@ -108,7 +111,7 @@ body {
 	left: 50%;
 	width: calc(100vw - 50px);
 	transform: translateX(-50%);
-	padding: 1rem 0;
+	padding: 0.5rem 0;
 }
 
 .attribution a {
